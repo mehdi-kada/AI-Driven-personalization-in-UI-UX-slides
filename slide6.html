@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>Case Study: E-Commerce Reinvented</title>
+<style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background-color: #f8fafc;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .ai-decoration {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.05;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .highlight {
+      color: #4f46e5;
+    }
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+    .comparison-arrow {
+      color: #4f46e5;
+      font-size: 2.5rem;
+    }
+    .result-box {
+      background-color: rgba(79, 70, 229, 0.1);
+      border-left: 4px solid #4f46e5;
+    }
+    .ecommerce-mockup {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .mockup-header {
+      background-color: #f3f4f6;
+      border-bottom: 1px solid #e5e7eb;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+    }
+    .header-dot {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+<div class="slide flex flex-col">
+<div class="ai-decoration">
+<svg viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,100 C200,150 400,50 600,100 S800,200 1000,150 S1200,50 1280,100" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,200 C200,250 400,150 600,200 S800,300 1000,250 S1200,150 1280,200" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,300 C200,350 400,250 600,300 S800,400 1000,350 S1200,250 1280,300" fill="none" stroke="#4f46e5" stroke-width="2"></path>
+<circle cx="400" cy="250" fill="#4f46e5" r="5"></circle>
+<circle cx="600" cy="300" fill="#4f46e5" r="8"></circle>
+<circle cx="800" cy="350" fill="#4f46e5" r="4"></circle>
+<circle cx="1000" cy="200" fill="#4f46e5" r="7"></circle>
+</svg>
+</div>
+<div class="content-container px-20 py-16">
+<h1 class="text-4xl font-bold mb-8 text-gray-800">Case Study: <span class="highlight">E-Commerce Reinvented</span></h1>
+<div class="flex flex-row space-x-6">
+<!-- BEFORE Column -->
+<div class="w-1/2">
+<div class="ecommerce-mockup bg-white">
+<div class="mockup-header">
+<div class="header-dot bg-red-400"></div>
+<div class="header-dot bg-yellow-400"></div>
+<div class="header-dot bg-green-400"></div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-semibold mb-3 text-center text-gray-700">Before AI</h3>
+<div class="flex flex-col space-y-3">
+<div class="bg-gray-100 p-3 rounded">
+<div class="flex items-center mb-1">
+<i class="fas fa-store text-gray-500 mr-2"></i>
+<p class="font-semibold">Static Homepage</p>
+</div>
+<p class="text-sm text-gray-600">Same "featured products" shown to all visitors regardless of interests</p>
+</div>
+<div class="bg-gray-100 p-3 rounded">
+<div class="flex items-center mb-1">
+<i class="fas fa-th-large text-gray-500 mr-2"></i>
+<p class="font-semibold">Generic Categories</p>
+</div>
+<p class="text-sm text-gray-600">Standard navigation with no personalized entry points</p>
+</div>
+<div class="bg-gray-100 p-3 rounded">
+<div class="flex items-center mb-1">
+<i class="fas fa-tag text-gray-500 mr-2"></i>
+<p class="font-semibold">Generic Promotions</p>
+</div>
+<p class="text-sm text-gray-600">Same sales and promotions displayed to everyone</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<i class="fas fa-long-arrow-alt-right comparison-arrow"></i>
+</div>
+<!-- AFTER Column -->
+<div class="w-1/2">
+<div class="ecommerce-mockup bg-white">
+<div class="mockup-header">
+<div class="header-dot bg-red-400"></div>
+<div class="header-dot bg-yellow-400"></div>
+<div class="header-dot bg-green-400"></div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-semibold mb-3 text-center text-gray-700">After AI</h3>
+<div class="flex flex-col space-y-3">
+<div class="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+<div class="flex items-center mb-1">
+<i class="fas fa-thumbs-up text-indigo-500 mr-2"></i>
+<p class="font-semibold">Personalized "Recommended for You"</p>
+</div>
+<p class="text-sm text-gray-600">Products selected based on browsing history, purchase patterns, and similar users</p>
+</div>
+<div class="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+<div class="flex items-center mb-1">
+<i class="fas fa-history text-indigo-500 mr-2"></i>
+<p class="font-semibold">Recently Viewed Items</p>
+</div>
+<p class="text-sm text-gray-600">Easy access to products you've previously explored</p>
+</div>
+<div class="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+<div class="flex items-center mb-1">
+<i class="fas fa-map-marker-alt text-indigo-500 mr-2"></i>
+<p class="font-semibold">Location &amp; Interest-Based Promotions</p>
+</div>
+<p class="text-sm text-gray-600">Targeted offers based on your location and demonstrated interests</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<div class="result-box p-4 rounded">
+<h3 class="text-lg font-semibold mb-2">Results:</h3>
+<div class="flex justify-between">
+<div class="flex items-center">
+<i class="fas fa-chart-line text-indigo-600 mr-2 text-2xl"></i>
+<div>
+<p class="font-semibold">+35%</p>
+<p class="text-sm text-gray-600">User Engagement</p>
+</div>
+</div>
+<div class="flex items-center">
+<i class="fas fa-shopping-cart text-indigo-600 mr-2 text-2xl"></i>
+<div>
+<p class="font-semibold">+27%</p>
+<p class="text-sm text-gray-600">Conversion Rate</p>
+</div>
+</div>
+<div class="flex items-center">
+<i class="fas fa-redo text-indigo-600 mr-2 text-2xl"></i>
+<div>
+<p class="font-semibold">+42%</p>
+<p class="text-sm text-gray-600">Repeat Purchases</p>
+</div>
+</div>
+<div class="flex items-center">
+<i class="fas fa-clock text-indigo-600 mr-2 text-2xl"></i>
+<div>
+<p class="font-semibold">+18%</p>
+<p class="text-sm text-gray-600">Time on Site</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-20 mt-auto pb-6">
+<div class="border-t border-gray-200 pt-4 flex justify-between items-center">
+<div class="text-sm text-gray-500">
+<span class="highlight font-semibold">AI-Driven Personalization:</span> Crafting the Future of UI/UX
+        </div>
+<div class="text-sm text-gray-500">
+          Page 6
+        </div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight' || event.key === ' ') {
+      window.location.href = 'slide7.html';
+    }
+    if (event.key === 'ArrowLeft') {
+      window.location.href = 'slide5.html';
+    }
+  });
+</script>
+</body>
+</html>

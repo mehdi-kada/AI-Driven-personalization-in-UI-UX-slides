@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>Core Techniques &amp; Real-World Examples</title>
+<style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background-color: #f8fafc;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .ai-decoration {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.05;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .highlight {
+      color: #4f46e5;
+    }
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+    .technique-card {
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .technique-icon {
+      color: #4f46e5;
+      background-color: rgba(79, 70, 229, 0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .company-logo {
+      display: inline-flex;
+      align-items: center;
+      background-color: #f3f4f6;
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="slide flex flex-col">
+<div class="ai-decoration">
+<svg viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,100 C200,150 400,50 600,100 S800,200 1000,150 S1200,50 1280,100" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,200 C200,250 400,150 600,200 S800,300 1000,250 S1200,150 1280,200" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,300 C200,350 400,250 600,300 S800,400 1000,350 S1200,250 1280,300" fill="none" stroke="#4f46e5" stroke-width="2"></path>
+<circle cx="400" cy="250" fill="#4f46e5" r="5"></circle>
+<circle cx="600" cy="300" fill="#4f46e5" r="8"></circle>
+<circle cx="800" cy="350" fill="#4f46e5" r="4"></circle>
+<circle cx="1000" cy="200" fill="#4f46e5" r="7"></circle>
+</svg>
+</div>
+<div class="content-container px-20 py-12">
+<h1 class="text-3xl font-bold mb-6 text-gray-800">Core Techniques &amp; <span class="highlight">Real-World Examples</span></h1>
+<div class="grid grid-cols-2 gap-4">
+<!-- Content Personalization -->
+<div class="technique-card p-4">
+<div class="flex items-center mb-2">
+<div class="technique-icon mr-3">
+<i class="fas fa-film text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold">Content Personalization</h3>
+</div>
+<p class="text-gray-700 text-sm mb-2">Recommending content based on user preferences, viewing history, and behavior patterns</p>
+<div class="mt-2 grid grid-cols-2 gap-2">
+<div>
+<div class="company-logo mb-1">
+<i class="fas fa-play-circle text-red-600 mr-1 text-xs"></i>
+<span class="font-semibold text-xs">Netflix</span>
+</div>
+<img src="netflix data points (comp)-jpg.webp" alt="Netflix Personalization" class="w-full h-24 object-cover rounded-md shadow-sm">
+</div>
+<div>
+<div class="company-logo mb-1">
+<i class="fas fa-music text-green-600 mr-1 text-xs"></i>
+<span class="font-semibold text-xs">Spotify</span>
+</div>
+<img src="Spotify-Discover-Weekly-gets-personal-update.webp" alt="Spotify Discover Weekly" class="w-full h-24 object-cover rounded-md shadow-sm">
+</div>
+</div>
+<p class="text-xs text-gray-600 mt-1">Movie recommendations and "Discover Weekly" playlists tailored to individual taste profiles</p>
+</div>
+<!-- Dynamic UI Adaptation -->
+<div class="technique-card p-4">
+<div class="flex items-center mb-2">
+<div class="technique-icon mr-3">
+<i class="fas fa-laptop-code text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold">Dynamic UI Adaptation</h3>
+</div>
+<p class="text-gray-700 text-sm mb-2">Reorganizing interface elements based on user behavior and preferences</p>
+<div class="mt-2">
+<div class="company-logo mb-1">
+<i class="fas fa-shopping-cart text-amber-600 mr-1 text-xs"></i>
+<span class="font-semibold text-xs">Amazon</span>
+</div>
+<img src="amazon.png" alt="Amazon Dynamic UI" class="w-full h-24 object-cover rounded-md shadow-sm">
+</div>
+<p class="text-xs text-gray-600 mt-1">Reordering page elements based on browsing history and prioritizing products you're likely to purchase</p>
+</div>
+<!-- Personalized User Journeys -->
+<div class="technique-card p-4">
+<div class="flex items-center mb-2">
+<div class="technique-icon mr-3">
+<i class="fas fa-route text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold">Personalized User Journeys</h3>
+</div>
+<p class="text-gray-700 text-sm mb-2">Adapting user flows and experiences based on skill level and learning patterns</p>
+<div class="mt-2">
+<div class="company-logo mb-1">
+<i class="fas fa-language text-green-500 mr-1 text-xs"></i>
+<span class="font-semibold text-xs">Duolingo</span>
+</div>
+<img src="dulingo.jpg" alt="Duolingo Personalized Learning" class="w-full h-24 object-cover rounded-md shadow-sm">
+</div>
+<p class="text-xs text-gray-600 mt-1">Adjusting lesson difficulty based on user performance and optimizing the learning path</p>
+</div>
+<!-- Predictive Assistance -->
+<div class="technique-card p-4">
+<div class="flex items-center mb-2">
+<div class="technique-icon mr-3">
+<i class="fas fa-magic text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold">Predictive Assistance</h3>
+</div>
+<p class="text-gray-700 text-sm mb-2">Anticipating user needs based on contextual data and past behavior</p>
+<div class="mt-2">
+<div class="company-logo mb-1">
+<i class="fas fa-map-marker-alt text-blue-600 mr-1 text-xs"></i>
+<span class="font-semibold text-xs">Google Maps</span>
+</div>
+<img src="google_maps.png" alt="Google Maps Predictive Assistance" class="w-full h-24 object-cover rounded-md shadow-sm">
+</div>
+<p class="text-xs text-gray-600 mt-1">Predicting your destination based on time of day, location patterns, and calendar events</p>
+</div>
+</div>
+</div>
+<div class="px-20 mt-auto pb-6">
+<div class="border-t border-gray-200 pt-4 flex justify-between items-center">
+<div class="text-sm text-gray-500">
+<span class="highlight font-semibold">AI-Driven Personalization:</span> Crafting the Future of UI/UX
+</div>
+<div class="text-sm text-gray-500">
+Page 5
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight' || event.key === ' ') {
+      window.location.href = 'slide6.html';
+    }
+    if (event.key === 'ArrowLeft') {
+      window.location.href = 'slide4.html';
+    }
+  });
+</script>
+</body>
+</html>

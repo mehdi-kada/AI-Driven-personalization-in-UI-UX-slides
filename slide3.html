@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>Why It Matters: The Impact of Personalization</title>
+<style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background-color: #f8fafc;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .ai-decoration {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.05;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .highlight {
+      color: #4f46e5;
+    }
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+    .metric-card {
+      border-radius: 0.5rem;
+      transition: transform 0.2s ease-in-out;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .metric-card:hover {
+      transform: translateY(-5px);
+    }
+    .stat-highlight {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #4f46e5;
+    }
+  </style>
+</head>
+<body style="">
+<div class="slide flex flex-col">
+
+<div class="content-container px-20 py-16" style="transform: translate(0px, 12.6786px);">
+<h1 class="text-4xl font-bold mb-8 text-gray-800">Why It Matters: <span class="highlight">The Impact of Personalization</span></h1>
+<div class="flex flex-row">
+<div class="w-2/3 pr-8">
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="metric-card p-5">
+<div class="flex items-start mb-3">
+<div class="text-indigo-600 mr-4">
+<i class="fas fa-chart-line text-3xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">User Engagement &amp; Retention</h3>
+<p class="text-gray-600 mt-2">Personalized UX increases time spent on platforms by <span class="stat-highlight">+32%</span> and reduces bounce rates.</p>
+</div>
+</div>
+</div>
+<div class="metric-card p-5">
+<div class="flex items-start mb-3">
+<div class="text-indigo-600 mr-4">
+<i class="fas fa-shopping-cart text-3xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Conversion Rates &amp; Sales</h3>
+<p class="text-gray-600 mt-2">AI personalization increases conversion rates by up to <span class="stat-highlight">+15%</span> and average order value by 20%.</p>
+</div>
+</div>
+</div>
+<div class="metric-card p-5">
+<div class="flex items-start mb-3">
+<div class="text-indigo-600 mr-4">
+<i class="fas fa-heart text-3xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Customer Loyalty</h3>
+<p class="text-gray-600 mt-2">Personalized experiences increase customer satisfaction scores by <span class="stat-highlight">+25%</span> and repeat purchases.</p>
+</div>
+</div>
+</div>
+<div class="metric-card p-5">
+<div class="flex items-start mb-3">
+<div class="text-indigo-600 mr-4">
+<i class="fas fa-rocket text-3xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">ROI &amp; Cost Efficiency</h3>
+<p class="text-gray-600 mt-2">Companies report <span class="stat-highlight">+40%</span> higher marketing ROI with AI-driven personalization strategies.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-indigo-50 p-5 rounded-lg border-l-4 border-indigo-600 mt-4">
+<p class="text-gray-800 font-semibold text-lg">
+<i class="fas fa-quote-left text-indigo-400 mr-2"></i> 
+80% of consumers are more likely to purchase from companies that offer personalized experiences.
+<i class="fas fa-quote-right text-indigo-400 ml-2"></i>
+</p>
+<p class="text-sm text-gray-500 mt-2">Source: McKinsey Personalization Report, 2025</p>
+</div>
+</div>
+<div class="w-1/3 flex items-center justify-center">
+<div class="w-full h-80 relative">
+<canvas height="320" id="impactChart" width="373" style="display: block; box-sizing: border-box; height: 320px; width: 373px;"></canvas>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<script>
+  const ctx = document.getElementById('impactChart').getContext('2d');
+  const impactChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+          labels: ['User Engagement', 'Conversion Rate', 'Customer Loyalty', 'ROI', 'Time Efficiency'],
+          datasets: [{
+              label: 'Traditional UX',
+              data: [40, 35, 45, 30, 25],
+              backgroundColor: 'rgba(156, 163, 175, 0.2)',
+              borderColor: 'rgba(156, 163, 175, 1)',
+              pointBackgroundColor: 'rgba(156, 163, 175, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(156, 163, 175, 1)'
+          }, {
+              label: 'AI-Personalized UX',
+              data: [80, 75, 85, 80, 70],
+              backgroundColor: 'rgba(79, 70, 229, 0.2)',
+              borderColor: 'rgba(79, 70, 229, 1)',
+              pointBackgroundColor: 'rgba(79, 70, 229, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(79, 70, 229, 1)'
+          }]
+      },
+      options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+              r: {
+                  angleLines: {
+                      display: true
+                  },
+                  suggestedMin: 0,
+                  suggestedMax: 100
+              }
+          }
+      }
+  });
+</script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight' || event.key === ' ') {
+      window.location.href = 'slide4.html';
+    }
+    if (event.key === 'ArrowLeft') {
+      window.location.href = 'slide2.html';
+    }
+  });
+</script>
+</body></html>

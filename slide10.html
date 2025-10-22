@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>Key Takeaways</title>
+<style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background-color: #f8fafc;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .ai-decoration {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.05;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .highlight {
+      color: #4f46e5;
+    }
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+    .bullet-point {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .bullet-icon {
+      color: #4f46e5;
+      margin-top: 0.25rem;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    .key-takeaway {
+      background-color: rgba(79, 70, 229, 0.05);
+      border-left: 4px solid #4f46e5;
+      padding: 1rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      transition: transform 0.2s;
+    }
+    .key-takeaway:hover {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+<div class="slide flex flex-col">
+<div class="ai-decoration">
+<svg viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,100 C200,150 400,50 600,100 S800,200 1000,150 S1200,50 1280,100" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,200 C200,250 400,150 600,200 S800,300 1000,250 S1200,150 1280,200" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,300 C200,350 400,250 600,300 S800,400 1000,350 S1200,250 1280,300" fill="none" stroke="#4f46e5" stroke-width="2"></path>
+<circle cx="400" cy="250" fill="#4f46e5" r="5"></circle>
+<circle cx="600" cy="300" fill="#4f46e5" r="8"></circle>
+<circle cx="800" cy="350" fill="#4f46e5" r="4"></circle>
+<circle cx="1000" cy="200" fill="#4f46e5" r="7"></circle>
+</svg>
+</div>
+<div class="content-container px-20 py-16">
+<h1 class="text-4xl font-bold mb-8 text-gray-800">Key <span class="highlight">Takeaways</span></h1>
+<div class="flex flex-row">
+<div class="w-2/3 pr-8">
+<div class="bullet-point">
+<div class="bullet-icon">
+<i class="fas fa-star text-xl"></i>
+</div>
+<div class="key-takeaway w-full">
+<h3 class="text-xl font-semibold mb-1">Personalization is no longer optional</h3>
+<p class="text-gray-700">Users now expect tailored experiences that adapt to their unique needs, preferences, and behaviors.</p>
+</div>
+</div>
+<div class="bullet-point">
+<div class="bullet-icon">
+<i class="fas fa-chart-line text-xl"></i>
+</div>
+<div class="key-takeaway w-full">
+<h3 class="text-xl font-semibold mb-1">Driving business goals and user satisfaction</h3>
+<p class="text-gray-700">AI-driven personalization significantly improves engagement, conversion rates, and customer loyalty.</p>
+</div>
+</div>
+<div class="bullet-point">
+<div class="bullet-icon">
+<i class="fas fa-sync-alt text-xl"></i>
+</div>
+<div class="key-takeaway w-full">
+<h3 class="text-xl font-semibold mb-1">Designer's role is evolving</h3>
+<p class="text-gray-700">From creating static screens to designing dynamic systems and personalization rules that adapt at scale.</p>
+</div>
+</div>
+<div class="bullet-point">
+<div class="bullet-icon">
+<i class="fas fa-shield-alt text-xl"></i>
+</div>
+<div class="key-takeaway w-full">
+<h3 class="text-xl font-semibold mb-1">Ethics and trust are foundational</h3>
+<p class="text-gray-700">Maintaining transparency, addressing bias, and respecting privacy are essential for long-term success.</p>
+</div>
+</div>
+</div>
+<div class="w-1/3 flex flex-col justify-center items-center">
+<div class="mb-8 bg-indigo-50 p-4 rounded-lg shadow-sm">
+<div class="text-center mb-3">
+<i class="fas fa-bullseye text-indigo-600 text-4xl"></i>
+</div>
+<div class="text-center font-semibold text-indigo-700">
+From Static to Dynamic
+</div>
+<div class="text-center text-sm text-gray-600 mt-1">
+One interface → Million experiences
+</div>
+</div>
+<div class="w-full h-px bg-gray-200 my-2"></div>
+<div class="text-center mt-4 px-4 py-3 bg-indigo-600 text-white rounded-lg shadow-md">
+<span class="font-bold">The Future is Personal</span>
+<p class="text-sm mt-2">AI + UX Design = Hyper-personalized Experiences</p>
+</div>
+</div>
+</div>
+</div>
+<div class="px-20 mt-auto pb-6">
+<div class="border-t border-gray-200 pt-4 flex justify-between items-center">
+<div class="text-sm text-gray-500">
+<span class="highlight font-semibold">AI-Driven Personalization:</span> Crafting the Future of UI/UX
+</div>
+<div class="text-sm text-gray-500">
+Page 10
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight' || event.key === ' ') {
+      window.location.href = 'slide11.html';
+    }
+    if (event.key === 'ArrowLeft') {
+      window.location.href = 'slide9.html';
+    }
+  });
+</script>
+</body>
+</html>

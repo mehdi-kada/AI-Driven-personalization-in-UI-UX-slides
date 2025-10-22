@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<title>Q&amp;A / Thank You</title>
+<style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background-color: #f8fafc;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .ai-decoration {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.05;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .highlight {
+      color: #4f46e5;
+    }
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .contact-icon {
+      color: #4f46e5;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body style="">
+<div class="slide flex flex-col">
+<div class="ai-decoration">
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,100 C200,150 400,50 600,100 S800,200 1000,150 S1200,50 1280,100" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,200 C200,250 400,150 600,200 S800,300 1000,250 S1200,150 1280,200" fill="none" stroke="#4f46e5" stroke-width="3"></path>
+<path d="M0,300 C200,350 400,250 600,300 S800,400 1000,350 S1200,250 1280,300" fill="none" stroke="#4f46e5" stroke-width="2"></path>
+<circle cx="400" cy="250" fill="#4f46e5" r="5"></circle>
+<circle cx="600" cy="300" fill="#4f46e5" r="8"></circle>
+<circle cx="800" cy="350" fill="#4f46e5" r="4"></circle>
+<circle cx="1000" cy="200" fill="#4f46e5" r="7"></circle>
+</svg>
+</div>
+<div class="content-container px-20 py-16 flex flex-col items-center justify-center h-full">
+<div class="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+<i class="fas fa-question text-indigo-600 text-5xl"></i>
+</div>
+<h1 class="text-5xl font-bold mb-8 text-center">
+<span class="highlight">Questions?</span>
+</h1>
+<div class="w-16 h-1 bg-indigo-600 mx-auto mb-12"></div>
+<div class="contact-info max-w-md text-center">
+<div class="contact-item justify-center">
+<div class="contact-icon">
+<i class="fas fa-user text-xl"></i>
+</div>
+<p class="text-xl">Amara Kada</p>
+</div>
+<div class="contact-item justify-center">
+<div class="contact-icon">
+<i class="fas fa-envelope text-xl"></i>
+</div>
+<p class="text-xl">amara.kada@etu.univ-batna2.dz</p></div>
+</div>
+<div class="mt-12 text-center text-gray-600">
+<p>Thank you for your attention!</p>
+</div>
+</div>
+<div class="px-20 mt-auto pb-6">
+<div class="border-t border-gray-200 pt-4 flex justify-between items-center">
+<div class="text-sm text-gray-500">
+<span class="highlight font-semibold">AI-Driven Personalization:</span> Crafting the Future of UI/UX
+</div>
+<div class="text-sm text-gray-500">
+Page 11
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight' || event.key === ' ') {
+      // On last slide, right arrow does nothing or could go to next if exists
+    }
+    if (event.key === 'ArrowLeft') {
+      window.location.href = 'slide10.html';
+    }
+  });
+</script>
+</body></html>
