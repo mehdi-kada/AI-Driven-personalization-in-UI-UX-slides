@@ -47,10 +47,28 @@
       background-color: rgba(79, 70, 229, 0.1);
       border-left: 4px solid #4f46e5;
     }
+    .reveal-item {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .reveal-item.visible {
+      opacity: 1;
+      visibility: visible;
+    }
     .ecommerce-mockup {
       border: 1px solid #e5e7eb;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .comparison-column {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .comparison-column.visible {
+      opacity: 1;
+      visibility: visible;
     }
     .mockup-header {
       background-color: #f3f4f6;
@@ -85,7 +103,7 @@
 <h1 class="text-4xl font-bold mb-8 text-gray-800">Case Study: <span class="highlight">E-Commerce Reinvented</span></h1>
 <div class="flex flex-row space-x-6">
 <!-- BEFORE Column -->
-<div class="w-1/2">
+<div class="w-1/2 comparison-column">
 <div class="ecommerce-mockup bg-white">
 <div class="mockup-header">
 <div class="header-dot bg-red-400"></div>
@@ -124,7 +142,7 @@
 <i class="fas fa-long-arrow-alt-right comparison-arrow"></i>
 </div>
 <!-- AFTER Column -->
-<div class="w-1/2">
+<div class="w-1/2 comparison-column">
 <div class="ecommerce-mockup bg-white">
 <div class="mockup-header">
 <div class="header-dot bg-red-400"></div>
@@ -160,7 +178,7 @@
 </div>
 </div>
 </div>
-<div class="mt-8">
+<div class="mt-8 reveal-item">
 <div class="result-box p-4 rounded">
 <h3 class="text-lg font-semibold mb-2">Results:</h3>
 <div class="flex justify-between">
@@ -208,7 +226,24 @@
 </div>
 </div>
 <script>
+  let currentIndex = 0;
+  const revealItems = document.querySelectorAll('.comparison-column, .reveal-item');
+  
   document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (currentIndex < revealItems.length) {
+        revealItems[currentIndex].classList.add('visible');
+        currentIndex++;
+      }
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (currentIndex > 0) {
+        currentIndex--;
+        revealItems[currentIndex].classList.remove('visible');
+      }
+    }
     if (event.key === 'ArrowRight' || event.key === ' ') {
       window.location.href = 'slide7.html';
     }

@@ -43,6 +43,13 @@
       display: flex;
       align-items: flex-start;
       margin-bottom: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .bullet-point.visible {
+      opacity: 1;
+      visibility: visible;
     }
     .bullet-icon {
       color: #4f46e5;
@@ -148,7 +155,24 @@ Page 10
 </div>
 </div>
 <script>
+  let currentBulletIndex = 0;
+  const bullets = document.querySelectorAll('.bullet-point');
+  
   document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (currentBulletIndex < bullets.length) {
+        bullets[currentBulletIndex].classList.add('visible');
+        currentBulletIndex++;
+      }
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (currentBulletIndex > 0) {
+        currentBulletIndex--;
+        bullets[currentBulletIndex].classList.remove('visible');
+      }
+    }
     if (event.key === 'ArrowRight' || event.key === ' ') {
       window.location.href = 'slide11.html';
     }

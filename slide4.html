@@ -46,6 +46,12 @@
       border-radius: 0.5rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .process-step.visible {
+      opacity: 1;
+      visibility: visible;
     }
     .process-step:hover {
       transform: translateY(-5px);
@@ -159,9 +165,19 @@ Page 4
 </div>
 </div>
 <script>
+  let currentCardIndex = 0;
+  const cards = document.querySelectorAll('.process-step');
+  
   document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (currentCardIndex < cards.length) {
+        cards[currentCardIndex].classList.add('visible');
+        currentCardIndex++;
+      }
+    }
     if (event.key === 'ArrowRight' || event.key === ' ') {
-      window.location.href = 'slide5.html';
+      window.location.href = 'slide5a.html';
     }
     if (event.key === 'ArrowLeft') {
       window.location.href = 'slide3.html';
