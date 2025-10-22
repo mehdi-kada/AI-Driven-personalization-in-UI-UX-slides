@@ -40,17 +40,55 @@
     }
     .metric-card {
       border-radius: 0.5rem;
-      transition: transform 0.2s ease-in-out;
+      transition: all 0.3s ease-in-out;
       background-color: white;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 3px solid transparent;
+      position: relative;
     }
     .metric-card:hover {
       transform: translateY(-5px);
+    }
+    .metric-card.highlighted {
+      border: 3px solid #4f46e5;
+      box-shadow: 0 0 20px rgba(79, 70, 229, 0.4), 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: scale(1.05);
+    }
+    .metric-card.highlighted::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border-radius: 0.5rem;
+      border: 2px solid #4f46e5;
+      opacity: 0.3;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.1;
+      }
     }
     .stat-highlight {
       font-weight: 700;
       font-size: 1.5rem;
       color: #4f46e5;
+    }
+    .quote-box {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .quote-box.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -107,7 +145,7 @@
 </div>
 </div>
 </div>
-<div class="bg-indigo-50 p-5 rounded-lg border-l-4 border-indigo-600 mt-4">
+<div class="bg-indigo-50 p-5 rounded-lg border-l-4 border-indigo-600 mt-4 quote-box">
 <p class="text-gray-800 font-semibold text-lg">
 <i class="fas fa-quote-left text-indigo-400 mr-2"></i> 
 80% of consumers are more likely to purchase from companies that offer personalized experiences.
@@ -167,7 +205,45 @@
   });
 </script>
 <script>
+  let currentHighlight = 0;
+  const metricCards = document.querySelectorAll('.metric-card');
+  const totalCards = metricCards.length;
+  const quoteBox = document.querySelector('.quote-box');
+  let quoteVisible = false;
+
+  // Automatically cycle through cards
+  function cycleHighlight() {
+    // Remove highlight from all cards
+    metricCards.forEach(card => card.classList.remove('highlighted'));
+    
+    // Add highlight to current card
+    metricCards[currentHighlight].classList.add('highlighted');
+    
+    // Move to next card
+    currentHighlight = (currentHighlight + 1) % totalCards;
+  }
+
+  // Start with first card highlighted
+  metricCards[0].classList.add('highlighted');
+  
+  // Cycle every 2 seconds
+  setInterval(cycleHighlight, 2000);
+
   document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (!quoteVisible) {
+        quoteBox.classList.add('visible');
+        quoteVisible = true;
+      }
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (quoteVisible) {
+        quoteBox.classList.remove('visible');
+        quoteVisible = false;
+      }
+    }
     if (event.key === 'ArrowRight' || event.key === ' ') {
       window.location.href = 'slide4.html';
     }

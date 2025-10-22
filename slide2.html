@@ -43,6 +43,14 @@
       display: flex;
       align-items: flex-start;
       margin-bottom: 1.5rem;
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .bullet-point.hidden {
+      opacity: 0;
+      transform: translateX(-30px);
+      pointer-events: none;
     }
     .bullet-icon {
       color: #4f46e5;
@@ -69,7 +77,7 @@
 <h1 class="text-4xl font-bold mb-8 text-gray-800">Introduction: <span class="highlight">Beyond One-Size-Fits-All</span></h1>
 <div class="flex flex-row">
 <div class="w-2/3 pr-8">
-<div class="bullet-point">
+              <div class="bullet-point" data-index="0">
 <div class="bullet-icon">
 <i class="fas fa-exclamation-triangle text-xl"></i>
 </div>
@@ -78,7 +86,7 @@
 <p class="text-gray-700">Generic interfaces that treat all users the same, creating friction and missed opportunities for engagement.</p>
 </div>
 </div>
-<div class="bullet-point">
+<div class="bullet-point hidden" data-index="1">
 <div class="bullet-icon">
 <i class="fas fa-lightbulb text-xl"></i>
 </div>
@@ -87,7 +95,7 @@
 <p class="text-gray-700">The practice of using artificial intelligence and machine learning to tailor digital experiences to individual users in real-time.</p>
 </div>
 </div>
-<div class="bullet-point">
+<div class="bullet-point hidden" data-index="2">
 <div class="bullet-icon">
 <i class="fas fa-chart-line text-xl"></i>
 </div>
@@ -114,7 +122,25 @@
 </div>
 </div>
 <script>
+  let currentStep = 0;
+  const bullets = document.querySelectorAll('.bullet-point');
+  const totalSteps = bullets.length - 1; // -1 because first bullet is always visible
+
   document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (currentStep < totalSteps) {
+        currentStep++;
+        bullets[currentStep].classList.remove('hidden');
+      }
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (currentStep > 0) {
+        bullets[currentStep].classList.add('hidden');
+        currentStep--;
+      }
+    }
     if (event.key === 'ArrowRight' || event.key === ' ') {
       window.location.href = 'slide3.html';
     }
