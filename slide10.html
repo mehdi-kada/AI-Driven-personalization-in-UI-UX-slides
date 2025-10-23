@@ -46,10 +46,42 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 3px solid transparent;
+      position: relative;
     }
     .bullet-point.visible {
       opacity: 1;
       visibility: visible;
+      background-color: white;
+    }
+    .bullet-point.highlighted {
+      border: 3px solid #4f46e5;
+      box-shadow: 0 0 20px rgba(79, 70, 229, 0.4), 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: scale(1.02);
+    }
+    .bullet-point.highlighted::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border-radius: 0.5rem;
+      border: 2px solid #4f46e5;
+      opacity: 0.3;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.1;
+      }
     }
     .bullet-icon {
       color: #4f46e5;
@@ -162,7 +194,9 @@ Page 10
     if (event.key === 'ArrowDown') {
       event.preventDefault();
       if (currentBulletIndex < bullets.length) {
+        bullets.forEach(bullet => bullet.classList.remove('highlighted'));
         bullets[currentBulletIndex].classList.add('visible');
+        bullets[currentBulletIndex].classList.add('highlighted');
         currentBulletIndex++;
       }
     }
@@ -171,6 +205,11 @@ Page 10
       if (currentBulletIndex > 0) {
         currentBulletIndex--;
         bullets[currentBulletIndex].classList.remove('visible');
+        bullets[currentBulletIndex].classList.remove('highlighted');
+        if (currentBulletIndex > 0) {
+          bullets.forEach(bullet => bullet.classList.remove('highlighted'));
+          bullets[currentBulletIndex - 1].classList.add('highlighted');
+        }
       }
     }
     if (event.key === 'ArrowRight' || event.key === ' ') {
